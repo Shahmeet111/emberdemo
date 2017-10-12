@@ -1,0 +1,23 @@
+<section class="content-header">
+    <h1>
+        Manage User
+    </h1>
+
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        &nbsp;
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- TABLE: LATEST ORDERS -->
+            {{#box-widget title = "" class= "box-info" }} {{add-user user=model validations=UserValidations save=(action "save") reset=(action
+            "reset") validateProperty=(action "validateProperty") }} {{/box-widget}}
+
+        </div>
+    </div>
+</section>

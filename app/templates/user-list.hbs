@@ -1,0 +1,84 @@
+<section class="content-header">
+    <h1>
+        Users
+
+    </h1>
+
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-2">
+            {{#link-to 'user-create'}}<button class="btn btn-block btn-info btn-flat">Add New User</button> {{/link-to}}
+        </div>
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- TABLE: LATEST ORDERS -->
+            {{#box-widget title = "User Listing" class= "box-info" }}
+            <div class="table-responsive">
+                <table class="table no-margin">
+                    <thead>
+                        <tr>
+                            <th>
+                                FirstName
+                            </th>
+                            <th>
+                                LastName
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Address
+                            </th>
+                            <th>
+                                Age
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each model as |user|}}
+                        <tr>
+                            <td>
+                                {{user.firstName}}
+                            </td>
+                            <td>
+                                {{user.lastName}}
+                            </td>
+                            <td>
+                                {{user.email}}
+                            </td>
+                            <td>
+                                {{user.address}}
+                            </td>
+                            <td>
+                                {{user.age}}
+                            </td>
+                            <th>
+                                <i class="fa fa-pencil-square-o" style="cursor:pointer" {{action 'edit' user.id}} title="edit" aria-hidden="true"></i>
+                                <i class="fa fa-trash-o" style="cursor:pointer" {{action 'delete' user.id}} aria-hidden="true" title="Delete"></i>
+
+                            </th>
+
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+            {{/box-widget}}
+
+        </div>
+    </div>
+</section>

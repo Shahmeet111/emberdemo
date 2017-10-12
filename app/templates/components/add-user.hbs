@@ -1,0 +1,43 @@
+ {{#with (changeset user validations) as |changeset|}}
+<label> FirstName : </label> 
+{{validated-field type="text" changeset=changeset property="firstName" validateProperty=(action
+validateProperty changeset "firstName") }}
+<br/>
+
+<label> LastName : </label> 
+{{validated-field type="text" changeset=changeset property="lastName" validateProperty=(action
+validateProperty changeset "lastName") }}
+<br/>
+<label> Email : </label> 
+{{validated-field type="text" changeset=changeset property="email" validateProperty=(action validateProperty
+changeset "email") }}
+<br/>
+<label> Password : </label> 
+{{validated-field type="password" changeset=changeset property="password" validateProperty=(action
+validateProperty changeset "password") }}
+<br/>
+{{!--<label> Confirm Password : </label> 
+{{validated-field type="password" changeset=changeset property="confirmpassword" validateProperty=(action
+validateProperty changeset "confirmpassword") }}
+<br/>--}}
+<label> Address : </label> 
+{{validated-field type="text" changeset=changeset property="address" validateProperty=(action
+validateProperty changeset "address") }}
+<br/>
+<label> Age : </label> 
+{{validated-field type="number" changeset=changeset property="age" validateProperty=(action validateProperty
+changeset "age") }}
+
+<div class="row">
+    &nbsp;
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-block btn-success btn-flat" {{action save changeset}} disabled={{changeset.isInvalid}} class="button-primary">Save</button>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-block btn-danger btn-flat" {{action reset changeset}}>Cancel</button>
+    </div>
+
+</div>
+{{/with}}
